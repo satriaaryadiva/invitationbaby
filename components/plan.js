@@ -71,11 +71,11 @@ const Plan = () => {
             </div>
             <p className="text-sm text-yellow-500 mt-1">Welcome Drinks</p>
           </div>
-          <div className="text-center">
+           <div className="text-center">
             <div className="w-max h-max mx-auto">
-              <Ring />
+              <Lunch />
             </div>
-            <p className="text-sm text-yellow-500 mt-1">Ceremony</p>
+            <p className="text-sm text-yellow-500 mt-1">Lunch Time</p>
           </div>
           <div className="text-center">
             <div className="w-max h-max mx-auto">
@@ -83,12 +83,7 @@ const Plan = () => {
             </div>
             <p className="text-sm text-yellow-500 mt-1">Party Photos</p>
           </div>
-          <div className="text-center">
-            <div className="w-max h-max mx-auto">
-              <Lunch />
-            </div>
-            <p className="text-sm text-yellow-500 mt-1">Lunch Time</p>
-          </div>
+        
           <div className="text-center">
             <div className="w-max h-max mx-auto">
               <Closing />

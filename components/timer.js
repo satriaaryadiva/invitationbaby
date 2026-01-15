@@ -7,7 +7,8 @@ import { useIsVisible } from "./visibilityobserver";
 const Timer = () => {
   const ref = useRef(null);
   const isVisible = useIsVisible(ref);
-  const targetDate = new Date("2025-05-10T00:00:00").getTime();
+  // Minggu, 18 Januari 2026 jam 08:00 pagi (sesuaikan dengan jam akad/resepsi)
+  const targetDate = new Date("2026-01-18T08:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -29,63 +30,108 @@ const Timer = () => {
 
         setTimeLeft({ days, hours, minutes, seconds });
       } else {
-        // Waktu habis
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
-    updateTimer(); // panggil langsung biar ga delay 1 detik
+    updateTimer();
     const interval = setInterval(updateTimer, 1000);
 
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  const boxVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i  ) => ({
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
       opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const boxVariants = {
+    hidden: { 
+      opacity: 0, 
+      scale: 0.8,
+      y: 30 
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
       y: 0,
-      transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
-    }),
+      transition: { 
+        duration: 0.6, 
+        ease: [0.43, 0.13, 0.23, 0.96] // easeOutExpo
+      },
+    },
   };
 
   const timeUnits = [
-    { label: "Days", value: timeLeft.days },
-    { label: "Hours", value: timeLeft.hours },
-    { label: "Min", value: timeLeft.minutes },
-    { label: "Sec", value: timeLeft.seconds },
+    { label: "Hari", value: timeLeft.days },
+    { label: "Jam", value: timeLeft.hours },
+    { label: "Menit", value: timeLeft.minutes },
+    { label: "Detik", value: timeLeft.seconds },
   ];
 
   return (
-    <div className="flex justify-center items-center   min-h-fit    ">
-      <div className="grid grid-cols-2 gap-4  mt-5 z-40">
+    <div className="flex flex-col justify-center items-center py-10 px-4">
+      {/* Judul Section */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center mb-8"
+      >
+        <h2 className="text-3xl font-bold text-[#f1ded2]  mb-2">Hitung Mundur Acara</h2>
+        <p className="text-lg text-[#f1ded2]">Minggu, 18 Januari 2026</p>
+      </motion.div>
+
+      {/* Timer Grid */}
+      <motion.div
+        ref={ref}
+        className="grid grid-cols-4 gap-3 w-full max-w-[340px]"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+      >
         {timeUnits.map((unit, i) => (
           <motion.div
             key={unit.label}
-            className="relative    align-middle"
+            className="relative flex justify-center items-center"
             variants={boxVariants}
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            custom={i}
           >
+            {/* Flower decoration */}
             <Image
               src="/flower-circle.png"
               alt="Flower Circle"
-              width={96}
-              height={94}
+              width={88}
+              height={88}
               priority={i < 2}
-              className="absolute w-[96px] h-[94px] object-cover origin-center rotate-[38deg] z-20 -top-[0.7rem] left-[0.2rem]"
+              className="absolute w-[88px] h-[88px] object-cover rotate-45 z-10"
             />
-            <div className="rounded-full w-[72px] h-[76px] bg-gray-300 flex flex-col justify-center items-center text-yellow-900 font-semibold relative z-30 text-sm text-center shadow-md">
-              {unit.value}
-              <span className="text-[11px] mt-0.5 font-normal">{unit.label}</span>
+            
+            {/* Timer box */}
+            <div className="rounded-full w-[68px] h-[68px] bg-gradient-to-br from-white to-gray-50 flex flex-col justify-center items-center text-[#851a19] font-bold relative z-20 shadow-lg border border-gray-100">
+              <span className="text-2xl leading-none">
+                {String(unit.value).padStart(2, '0')}
+              </span>
+              <span className="text-[10px] mt-1 font-medium text-gray-600 uppercase tracking-wide">
+                {unit.label}
+              </span>
             </div>
           </motion.div>
         ))}
-       
-        <div ref={ref} className="w-full h-1  bg-transparent" />
-      </div>
-      
+      </motion.div>
+
+      {/* Ornamental divider */}
+      <motion.div
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={isVisible ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="mt-8 w-32 h-[2px] bg-gradient-to-r from-transparent via-[#851a19] to-transparent"
+      />
     </div>
   );
 };

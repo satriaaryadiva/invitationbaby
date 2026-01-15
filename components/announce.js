@@ -3,10 +3,7 @@ import Image from "next/image";
 import { Italianno } from "next/font/google";
 import {useIsVisible} from "./visibilityobserver";
 import {useRef} from "react";
-const italianno = Italianno({
-  subsets: ["latin"],
-  weight: "400",
-});
+
 
 const Announce = () => {
   const ref = useRef(null);
@@ -16,18 +13,21 @@ const Announce = () => {
   const ref2 = useRef(null);
   const isVisible2 = useIsVisible(ref2);
   return (
-    <div className="relative">
+    <div className="relative bg-[#f1ded2]   ">
       <Image src="/header-flower.png" alt="Header Flower" width={412} height={38} priority className={`${isVisible1 ? "animate-slideInDown" : "opacity-0"}`} />
-       <h3 className={`$  text-[1rem]/[2rem] animate-fadeIn flex justify-center ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref}>The intimmate Wedding Of</h3>
-      <h1 className={`${italianno.className} text-yellow-400    text-[3.5rem] animate-fadeIn flex justify-center  text-center align-middle${isVisible1 ? "animate-spinnerGrow" : ""}`}>Satria & Fannia</h1>
+       <h3 className={`$  text-[1rem]/[2rem] text-center my-10  text-[#853234] animate-fadeIn flex justify-center ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref}>Assalamu'alaikum Wr Wb<br/>Tanpa mengurangi rasa hormat kami bermaksud mengundang Bapak/Ibu/Saudara/i pada acara Tasyakuran penambalan nama anak kami :</h3>
+     
       <div className={`flex justify-center relative ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref1}>
-        <Image  src="/Hero.jpg" alt="Frame Couple" width={326} className="rounded-lg  brightness-90" height={396} priority />
+        <Image  src="/Hero.png" alt="Frame Couple" width={326} className="rounded-lg  brightness-90" height={396} priority />
          
       </div>
       <div className={`flex flex-col justify-center items-center ${isVisible2 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref2}>
-        <h1 className={` text-[1rem]/[2rem]  bg-[url('/public/frame-couple.png)] mt-4  p-4  rounded-full  text-center flex justify-center`}>"And among His Signs is this, that He created for you mates from among yourselves, that He may dwell in tranquillity with them, and He has put love and mercy between your (hearts): verily in that are Signs for those who reflect."
+       <h1 className={`  text-[#f1ded2] p-2  rounded-md font-extrabold text-[2rem] bg-[#853234]  animate-fadeIn flex justify-center  text-center align-middle${isVisible1 ? "animate-spinnerGrow" : ""}`}>AULIA NAZRA DIANARA</h1>
+        <h1 className={` text-[1rem]/[2rem]  bg-[url('/public/frame-couple.png)] mt-4  p-4  rounded-full  text-center flex justify-center`}>
+        Putri Dari :<br/>
+Ibu ayu nirwana  & bapak Adi Surianto
 
-(QS. Ar-Rum: 21)</h1>
+ </h1>
         
        
       </div>

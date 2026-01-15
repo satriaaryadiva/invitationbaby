@@ -5,6 +5,10 @@ export default {
   content: ["./pages/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+       backgroundImage: {
+        hero2:"url('/background2.webp')",
+        hero: "url('/background1.webp')",
+      },
       animation: {
         fadeIn: "fadeIn 0.3s ease-in-out",
         fadeInSlow: "fadeIn 1s ease-in-out",

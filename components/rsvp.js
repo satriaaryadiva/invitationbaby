@@ -17,55 +17,54 @@ const RSVP = () => {
   return (
     <div>
       <h1
-        className={`${italianno.className} text-[3.5rem] flex justify-center my-7 ${
+        className={` text-[#f1ded2] text-center font-bold  text-[3.5rem] flex justify-center my-7 ${
           isVisible1 ? "animate-slideInDown" : "opacity-0"
         }`}
         ref={ref1}
       >
-        When and Where
+        Tempat dan waktu
       </h1>
       <p
-        className={`flex justify-center text-center ${
+        className={`flex justify-center  text-[#f1ded2] text-center ${
           isVisible1 ? "animate-spinnerGrow" : "opacity-0"
         }`}
       >
-        Sabtu , 10 Mei 2025, 11:00 - Selesai <br /> JL. HM Yamin, GG Lurah no 52,
-        Medan, Sumatera Utara
+        Minggu , 18 January 2026   <br />  Jl Platina 3 , Gg. Nangka, Titi Papan, Kec. Medan Deli, Kota Medan, Sumatera Utara 20242
       </p>
 
       <div
-        className={`flex flex-col mt-4 bg-white shadow-md shadow-black/25 w-max h-max mx-auto ${
+        className={`flex flex-col mt-4 bg-white rounded-sm  shadow-md shadow-black/25 w-max h-max mx-auto ${
           isVisible2 ? "animate-spinnerGrow" : "opacity-0"
         }`}
         ref={ref2}
       >
-        <div className="w-80 h-[200px] bg-gray-400">
+        <div className="w-[600] h-[600] bg-gray-400">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229.18941470563308!2d98.69685089824723!3d3.59872842963107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131a246e15f81%3A0xe36e00c71cc0397f!2sGg.%20Lurah%20No.52%2C%20Sei%20Kera%20Hilir%20II%2C%20Kec.%20Medan%20Perjuangan%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020222!5e1!3m2!1sid!2sid!4v1745703556448!5m2!1sid!2sid"
-            width={320}
-            height={300}
-            className="border-none"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3981.5934198286136!2d98.67388916015625!3d3.6796035766601562!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30313300439f8945%3A0x2d9dc9fd0bbb6091!2sTempe%20Berkah%20Jaya!5e0!3m2!1sen!2sid!4v1768504755087!5m2!1sen!2sid"
+            width={600}
+            height={400}
+            className="border-none w-full"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
 
-        <div className="w-80 h-auto bg-gradient-to-b from-white to-gray-100 shadow-lg rounded-lg flex flex-col p-4 animate-fade-in">
+        <div className="w-full h-auto bg-gradient-to-b from-white to-gray-100 shadow-lg rounded-lg flex flex-col p-4 animate-fade-in">
           <h1 className="text-2xl font-bold text-gray-700 text-center mb-2">
            Maps
           </h1>
           <h1
-            className={`text-3xl text-center text-pink-500 italic ${italianno.className}`}
+            className={`text-2xl text-center text-pink-500 `}
           >
-            Satria & Fannia
+         📍Tempe berkah jaya Medan
           </h1>
           <hr className="w-full border-t-2 border-gray-300 mt-2 mb-4" />
 
           {/* Arahkan tombol ke link tujuan */}
           <div className="flex justify-center mt-4">
             <a
-              href=" https://maps.app.goo.gl/PAhN5V35N2AuMoaA6" // <-- ganti link ini ke tujuan kamu
+              href=" https://www.google.com/maps/place/Tempe+Berkah+Jaya/@3.6796036,98.6738892,17z/data=!4m6!3m5!1s0x30313300439f8945:0x2d9dc9fd0bbb6091!8m2!3d3.6796043!4d98.6738921!16s%2Fg%2F11m694zpv1?hl=en&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" // <-- ganti link ini ke tujuan kamu
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm px-6 py-2 shadow-lg transform transition-transform hover:scale-105"

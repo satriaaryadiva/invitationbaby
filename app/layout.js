@@ -1,23 +1,33 @@
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
 
+
+
+import { Vidaloka } from 'next/font/google'
+
+const vidaloka = Vidaloka({
+  subsets: ['latin'],
+  weight: '400',
+})
+
+
 export const metadata = {
-  title: "Satria & Fannia",
-  description: "Undangan digital pernikahan Satria & Fannia. Klik untuk lihat acara, dan lainnya.",
+  title: "AULIA NAZRA DIANARA ",
+  description: "Undangan digital taskuran  AULIA NAZRA DIANARA . Klik untuk lihat acara, dan lainnya.",
   icons: {
     icon: "/LOve.ico", // pastikan file ini ada di folder public
     shortcut: "/LOve.ico",
   },
   openGraph: {
-    title: "Undangan Pernikahan Satria & Fannia",
-    description: "Kami mengundang Anda ke hari bahagia kami.",
-    url: "https://satriafania.vercel.app",
+    title: "Undangan Taskuran AULIA NAZRA DIANARA " ,
+    description: "Kami mengundang Anda ke taskuran baby kami.",
+    url: " https://aulianazradianara.vercel.app/",
     images: [
       {
         url: "/LOve.ico",
         width: 800,
         height: 600,
-        alt: "Cover Pernikahan",
+        alt: "Cover undangan",
       },
     ],
     type: "website",
@@ -38,7 +48,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href={metadata.icons.icon} />
         <link rel="shortcut icon" href={metadata.icons.shortcut} />
       </head>
-      <body>
+      <body  className={vidaloka.className}>
         {children}
         {/* Menambahkan Vercel Analytics */}
         <Analytics />

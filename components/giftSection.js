@@ -31,7 +31,7 @@ export default function GiftSection() {
     <section className="bg-[#145555] mt-4  h-fit p-4 text-yellow-100 font-sans">
  
       <p className="text-center text-sm mb-6">
-        Silahkan kirimkan hadiah kepada kedua mempelai
+       jika ingin kirimkan hadiah 
       </p>
 
       <div className="bg-yellow-50 text-start text-yellow-900 rounded-lg p-4 mb-6">

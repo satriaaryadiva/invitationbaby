@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Josefin_Sans } from "next/font/google";
+import WeddingWishes from "@/components/wishes";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,24 +15,17 @@ import RSVP from "@/components/rsvp";
 import Plan from "@/components/plan";
 import Footer from "@/components/footer";
  
-
 import WeddingGift from "@/components/gift";
 import AudioPlayer from "@/components/AudioPlayer";
 
-
 import "/app/globals.css";
 import TurutMengundang from "@/components/mengundang";
-
-const josefin = Josefin_Sans({
-  subsets: ["latin"],
-  weight: "400",
-});
+ 
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const audioRef = useRef(null);
-
 
   const params = useParams();
   const name = decodeURIComponent(params?.name || " ");
@@ -49,11 +42,11 @@ export default function Home() {
   };
 
   return (
-    <main className={josefin.className}>
+    <main className={`${!isOpen ? 'bg-hero' : 'bg-white'} bg-cover bg-fixed bg-center bg-no-repeat width-full text-[#851a19] flex justify-center min-h-screen`}>
       <AudioPlayer ref={audioRef} />
 
-      <div className="bg-slate-900 text-white flex justify-center min-h-screen">
-        <div className="w-[352px] overflow-hidden  ">
+      <div className="flex flex-col justify-center items-center">
+        <div className="  overflow-hidden">
           <AnimatePresence>
             {!isOpen && (
               <motion.div
@@ -73,7 +66,7 @@ export default function Home() {
                     alt="Cover"
                     width={400}
                     height={300}
-                    className="rounded-2xl max-w-full shadow-lg"
+                    className="rounded-2xl bg-fixed max-w-full shadow-lg"
                     priority
                   />
                 </motion.div>
@@ -84,7 +77,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 }}
                 >
-                  Selamat Datang <span className="text-yellow-400 capitalize ">{name}</span>
+                  Selamat Datang <span className=" capitalize">{name}</span>
                 </motion.h1>
 
                 <motion.p
@@ -107,7 +100,7 @@ export default function Home() {
                   />
                   <motion.button
                     onClick={handleOpenInvitation}
-                    className="mt-4 bg-white text-center flex font-bold text-slate-900 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-white hover:font-semibold duration-300"
+                    className="mt-4 bg-[#841919] text-center flex font-bold text-white px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-white hover:font-semibold duration-300"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 }}
@@ -128,17 +121,19 @@ export default function Home() {
           </AnimatePresence>
 
           {isOpen && (
-            < >
+            <div  className="bg-hero2 bg-center bg-cover bg-fixed  bg-no-repeat  " >
               <Announce />
-              <Couple />
-              <Memories />
               <Timer />
-              <RSVP />
-              <Plan />
+                <RSVP />
+           
+              <Memories />
+        <WeddingWishes/>
+            
+      
               <WeddingGift />
               <TurutMengundang/>
               <Footer />
-            </>
+            </div>
           )}
         </div>
       </div>
