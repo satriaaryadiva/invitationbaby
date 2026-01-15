@@ -46,7 +46,7 @@ export default function Home() {
       <AudioPlayer ref={audioRef} />
 
       <div className="flex flex-col justify-center items-center">
-        <div className="  overflow-hidden">
+        <div className="overflow-hidden">
           <AnimatePresence>
             {!isOpen && (
               <motion.div
@@ -77,7 +77,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 }}
                 >
-                  Selamat Datang <span className=" capitalize">{name}</span>
+                  Selamat Datang <span className="capitalize">{name}</span>
                 </motion.h1>
 
                 <motion.p
@@ -121,15 +121,17 @@ export default function Home() {
           </AnimatePresence>
 
           {isOpen && (
-            <div  className="bg-hero2 bg-center bg-cover bg-fixed  bg-no-repeat  " >
+            <div 
+              className="bg-center bg-cover bg-fixed bg-no-repeat"
+              style={{
+                backgroundImage: "url('/bg-hero2.jpg')" // Ganti dengan path image yang benar
+              }}
+            >
               <Announce />
               <Timer />
-                <RSVP />
-           
+              <RSVP />
               <Memories />
-        <WeddingWishes/>
-            
-      
+              <WeddingWishes/>
               <WeddingGift />
               <TurutMengundang/>
               <Footer />
