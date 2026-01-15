@@ -21,7 +21,7 @@ const TurutMengundang = () => {
         <div className="space-y-4">
           <HeartHandshake className="w-14 h-14 mx-auto text-rose-400/80 transition-transform transform hover:scale-110" />
           <h2 className="text-4xl font-extrabold text-rose-300 tracking-wider">
-            Turut Mengundang Kedua Keluarga Besar Mempelai
+            Jazakumullahu khairan katsiran atas doa dan perhatian yang diberikan.
           </h2>
           <p className="text-gray-400 text-lg italic max-w-3xl mx-auto">
             Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu dalam momen bahagia ini.

@@ -22,10 +22,10 @@ const Footer = () => {
         className="max-w-3xl mx-auto text-center space-y-6"
       >
         {/* Nama Pasangan + Tanggal */}
-        <h2 className={`${italianno.className} text-5xl text-rose-300 mb-2`}>
-          Fannia & Satria
+        <h2 className={` text-5xl text-rose-300 mb-2`}>
+         
         </h2>
-        <p className="text-sm italic text-gray-400 tracking-wide">10 Mei 2025</p>
+        <p className="text-sm italic text-gray-400 tracking-wide">18 JANUARY 2025</p>
 
         {/* Divider elegan */}
         <div className="flex items-center justify-center gap-2 my-6">
@@ -61,7 +61,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-xs text-gray-500 mt-8">
-          © {currentYear} Fannia & Satria. Made with love 💕
+          © {currentYear} KATALOGIN. Made with love 💕
         </p>
       </motion.div>
     </footer>

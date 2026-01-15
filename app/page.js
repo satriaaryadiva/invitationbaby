@@ -124,7 +124,7 @@ export default function Home() {
             <div 
               className="bg-center bg-cover bg-fixed bg-no-repeat"
               style={{
-                backgroundImage: "url('/bg-hero2.jpg')" // Ganti dengan path image yang benar
+                backgroundImage: "url('/background2.webp')" // Ganti dengan path image yang benar
               }}
             >
               <Announce />
