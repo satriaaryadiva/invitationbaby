@@ -128,7 +128,7 @@ export default function Home() {
 
           {isOpen && (
             <div 
-              className="bg-center bg-cover bg-fixed bg-no-repeat"
+              className="bg-center bg-hero2 bg-cover bg-fixed bg-no-repeat"
               style={{
                 backgroundImage: "url('/background2.webp')" // Ganti dengan path image yang benar
               }}
