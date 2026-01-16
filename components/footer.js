@@ -22,7 +22,7 @@ const Footer = () => {
         className="max-w-3xl mx-auto text-center space-y-6"
       >
         {/* Nama Pasangan + Tanggal */}
-        <h2 className={` text-5xl text-rose-300 mb-2`}>
+        <h2 className={`   text-5xl text-rose-300 mb-2`}>
          
         </h2>
         <p className="text-sm italic text-gray-400 tracking-wide">18 JANUARY 2025</p>

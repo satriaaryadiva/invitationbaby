@@ -130,7 +130,7 @@ export default function Home() {
             <div 
               className="bg-center bg-hero2 bg-cover bg-fixed bg-no-repeat"
               style={{
-                backgroundImage: "url('/background2.webp')" // Ganti dengan path image yang benar
+                backgroundImage: "url('/Background2.webp')" // Ganti dengan path image yang benar
               }}
             >
               <Announce />
