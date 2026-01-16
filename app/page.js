@@ -66,7 +66,7 @@ export default function Home() {
                     alt="Cover"
                     width={400}
                     height={300}
-                    className="rounded-2xl bg-fixed max-w-full shadow-lg"
+                    className="rounded-2xl bg-fixed    max-w-full shadow-lg"
                     priority
                   />
                 </motion.div>
@@ -122,9 +122,9 @@ export default function Home() {
 
           {isOpen && (
             <div 
-              className="bg-center bg-cover bg-fixed bg-no-repeat"
+              className="bg-center bg-hero2 bg-cover bg-fixed bg-no-repeat"
               style={{
-                backgroundImage: "url('/background2.webp')" // Ganti dengan path image yang benar
+                backgroundImage: "url('/Background2.webp')" // Ganti dengan path image yang benar
               }}
             >
               <Announce />

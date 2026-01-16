@@ -18,7 +18,7 @@ const Announce = () => {
        <h3 className={`$  text-[1rem]/[2rem] text-center my-10  text-[#853234] animate-fadeIn flex justify-center ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref}>Assalamu'alaikum Wr Wb<br/>Tanpa mengurangi rasa hormat kami bermaksud mengundang Bapak/Ibu/Saudara/i pada acara Tasyakuran penambalan nama anak kami :</h3>
      
       <div className={`flex justify-center relative ${isVisible1 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref1}>
-        <Image  src="/Hero.png" alt="Frame Couple" width={326} className="  rounded-t-full  brightness-110" height={396} priority />
+        <Image  src="/Hero.png" alt="Frame Couple" width={326} className="  rounded-t-full  brightness-130" height={396} priority />
          
       </div>
       <div className={`flex flex-col justify-center items-center ${isVisible2 ? "animate-spinnerGrow" : "opacity-0"}`} ref={ref2}>

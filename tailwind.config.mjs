@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
        backgroundImage: {
-        hero2:"url('/background2.webp')",
+        hero2:"url('/Background2.webp')",
         hero: "url('/background1.webp')",
       },
       animation: {

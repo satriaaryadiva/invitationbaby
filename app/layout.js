@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: "Undangan Taskuran AULIA NAZRA DIANARA " ,
     description: "Kami mengundang Anda ke taskuran baby kami.",
-    url: "http://localhost:3000/",
+    url: "https://aulianazra.vercel.app/",
     images: [
       {
         url: "/LOve.ico",
