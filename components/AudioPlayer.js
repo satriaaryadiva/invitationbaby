@@ -72,7 +72,7 @@ const AudioPlayer = forwardRef((props, ref) => {
     <>
       <audio
         ref={audioRef}
-        src="/Backsound.mp3"
+        src="/backsound.mp3"
         loop
         preload="auto"
         playsInline
